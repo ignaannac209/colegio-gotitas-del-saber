@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
-import main.java.edu.ingsoft.colegio.gotitas.model.Auth;
+import main.java.edu.ingsoft.colegio.gotitas.model.auth.Auth;
 import main.java.edu.ingsoft.colegio.gotitas.util.SceneManager;
 
 /**

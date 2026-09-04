@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import main.java.edu.ingsoft.colegio.gotitas.controller.LoginController;
 import main.java.edu.ingsoft.colegio.gotitas.controller.MainMenuController;
 import main.java.edu.ingsoft.colegio.gotitas.controller.RegistroController;
-import main.java.edu.ingsoft.colegio.gotitas.model.Auth;
+import main.java.edu.ingsoft.colegio.gotitas.model.auth.Auth;
 import main.java.edu.ingsoft.colegio.gotitas.repository.AuthRepository;
 import main.java.edu.ingsoft.colegio.gotitas.service.AuthService;
 

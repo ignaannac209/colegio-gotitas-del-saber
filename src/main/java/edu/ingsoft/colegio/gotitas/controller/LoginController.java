@@ -12,7 +12,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import main.java.edu.ingsoft.colegio.gotitas.dto.request.LoginRequest;
 import main.java.edu.ingsoft.colegio.gotitas.dto.response.LoginResponse;
-import main.java.edu.ingsoft.colegio.gotitas.model.Auth;
+import main.java.edu.ingsoft.colegio.gotitas.model.auth.Auth;
 import main.java.edu.ingsoft.colegio.gotitas.service.AuthService;
 import main.java.edu.ingsoft.colegio.gotitas.util.SceneManager;
 
