@@ -1,12 +1,12 @@
 
-package main.java.edu.ingsoft.colegio.gotitas.model.roles;
+package main.java.edu.ingsoft.colegio.gotitas.model.role;
 
 
-public class rol {
+public class Rol {
 
     private String nombreRol;
 
-    public rol(String nombreRol) {
+    public Rol(String nombreRol) {
         this.nombreRol = nombreRol;
     }
 
