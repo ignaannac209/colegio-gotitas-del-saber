@@ -11,7 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
-import main.java.edu.ingsoft.colegio.gotitas.model.Auth;
+import main.java.edu.ingsoft.colegio.gotitas.model.auth.Auth;
 import main.java.edu.ingsoft.colegio.gotitas.repository.AlumnoRepository;
 import main.java.edu.ingsoft.colegio.gotitas.repository.CursoRepository;
 import main.java.edu.ingsoft.colegio.gotitas.repository.DocenteRepository;

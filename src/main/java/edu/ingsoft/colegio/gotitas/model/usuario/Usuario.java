@@ -1,4 +1,4 @@
-package main.java.edu.ingsoft.colegio.gotitas.model;
+package main.java.edu.ingsoft.colegio.gotitas.model.usuario;
 
 /**
  * POJO que representa los datos capturados en el formulario de Registro

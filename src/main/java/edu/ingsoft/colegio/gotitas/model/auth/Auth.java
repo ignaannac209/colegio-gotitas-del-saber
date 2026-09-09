@@ -1,4 +1,4 @@
-package main.java.edu.ingsoft.colegio.gotitas.model;
+package main.java.edu.ingsoft.colegio.gotitas.model.auth;
 
 /**
  * POJO que representa la sesión del usuario autenticado.
