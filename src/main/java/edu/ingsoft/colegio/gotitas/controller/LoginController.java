@@ -65,7 +65,11 @@ public class LoginController implements Initializable {
             Auth usuarioAutenticado = autenticar(email, password);
             lblMensajeError.setText("");
             sceneManager.showMainMenuView(usuarioAutenticado);
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+            mostrarError("No fue posible iniciar sesión.es ");
         } catch (Exception e) {
+            e.printStackTrace();
             mostrarError(e.getMessage() != null ? e.getMessage() : "No fue posible iniciar sesión.");
         }
     }

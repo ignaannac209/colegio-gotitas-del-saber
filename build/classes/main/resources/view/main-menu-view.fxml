@@ -31,6 +31,13 @@
                 <Insets top="24" right="12" bottom="24" left="12" />
             </padding>
             <Button text="🏠  Inicio" onAction="#handleInicio" styleClass="boton-menu" maxWidth="Infinity" />
+            <Label text="ADMINISTRACIÓN" styleClass="etiqueta-grupo-menu" />
+            <Button text="👨‍🏫  Docentes y Alumnos" onAction="#handlePersonas" styleClass="boton-menu" maxWidth="Infinity" />
+            <Button text="📚  Catálogos" onAction="#handleCatalogos" styleClass="boton-menu" maxWidth="Infinity" />
+            <Button text="🗓️  Horarios" onAction="#handleHorarios" styleClass="boton-menu" maxWidth="Infinity" />
+            <Button text="⏰  Horario de Profesores" onAction="#handleHorarioDocente" styleClass="boton-menu" maxWidth="Infinity" />
+            <Button text="🧑‍🏫  Profesores y Alumnos" onAction="#handleDocentesAlumnos" styleClass="boton-menu" maxWidth="Infinity" />
+            <Label text="CUENTA" styleClass="etiqueta-grupo-menu" />
             <Button text="👤  Perfil" onAction="#handlePerfil" styleClass="boton-menu" maxWidth="Infinity" />
             <Button text="⚙️  Configuración" onAction="#handleConfiguracion" styleClass="boton-menu" maxWidth="Infinity" />
             <VBox VBox.vgrow="ALWAYS" />

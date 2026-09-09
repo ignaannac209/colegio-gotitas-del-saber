@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="main.java.edu.ingsoft.colegio.gotitas.controller.AdminCatalogosController"
+      spacing="16" styleClass="admin-root"
+      stylesheets="@/main/resources/css/admin-view.css">
+
+    <!-- ============================= CURSOS ============================= -->
+    <VBox spacing="10" HBox.hgrow="ALWAYS">
+        <Label text="Cursos" styleClass="subtitulo" />
+        <VBox spacing="8" styleClass="form-panel">
+            <TextField fx:id="txtCursoNombre" promptText="Ej. Cuarto Primaria" />
+            <HBox spacing="8">
+                <Button text="Agregar" styleClass="btn-primary" onAction="#handleAgregarCurso" />
+                <Button text="Eliminar seleccionado" styleClass="btn-danger" onAction="#handleEliminarCurso" />
+            </HBox>
+            <Label fx:id="lblMensajeCurso" wrapText="true" />
+        </VBox>
+        <TableView fx:id="tablaCursos" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colCursoNombre" text="Curso" prefWidth="220" />
+            </columns>
+        </TableView>
+    </VBox>
+
+    <!-- ============================= SECCIONES ============================= -->
+    <VBox spacing="10" HBox.hgrow="ALWAYS">
+        <Label text="Secciones" styleClass="subtitulo" />
+        <VBox spacing="8" styleClass="form-panel">
+            <TextField fx:id="txtSeccionNombre" promptText="Ej. A" />
+            <ComboBox fx:id="comboSeccionCurso" maxWidth="Infinity" promptText="Curso al que pertenece" />
+            <HBox spacing="8">
+                <Button text="Agregar" styleClass="btn-primary" onAction="#handleAgregarSeccion" />
+                <Button text="Eliminar seleccionada" styleClass="btn-danger" onAction="#handleEliminarSeccion" />
+            </HBox>
+            <Label fx:id="lblMensajeSeccion" wrapText="true" />
+        </VBox>
+        <TableView fx:id="tablaSecciones" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colSeccionEtiqueta" text="Curso / Sección" prefWidth="220" />
+            </columns>
+        </TableView>
+    </VBox>
+
+    <!-- ============================= MATERIAS ============================= -->
+    <VBox spacing="10" HBox.hgrow="ALWAYS">
+        <Label text="Materias" styleClass="subtitulo" />
+        <VBox spacing="8" styleClass="form-panel">
+            <TextField fx:id="txtMateriaNombre" promptText="Ej. Matemática" />
+            <HBox spacing="8">
+                <Button text="Agregar" styleClass="btn-primary" onAction="#handleAgregarMateria" />
+                <Button text="Eliminar seleccionada" styleClass="btn-danger" onAction="#handleEliminarMateria" />
+            </HBox>
+            <Label fx:id="lblMensajeMateria" wrapText="true" />
+        </VBox>
+        <TableView fx:id="tablaMaterias" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colMateriaNombre" text="Materia" prefWidth="220" />
+            </columns>
+        </TableView>
+    </VBox>
+
+    <padding><Insets top="4" right="4" bottom="4" left="4" /></padding>
+</HBox>

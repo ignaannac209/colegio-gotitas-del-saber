@@ -1,0 +1,108 @@
+/* ==========================================================
+   admin-view.css
+   Estilos compartidos por las vistas del panel de administración
+   ========================================================== */
+
+.admin-root {
+    -fx-background-color: transparent;
+}
+
+.form-panel {
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 10px;
+    -fx-border-color: #e3e8ee;
+    -fx-border-radius: 10px;
+    -fx-padding: 16px;
+}
+
+.form-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e3c72;
+}
+
+.field-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #45526b;
+}
+
+.btn-primary {
+    -fx-background-color: #1e3c72;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #16305c;
+}
+
+.btn-secundario {
+    -fx-background-color: #e3e8ee;
+    -fx-text-fill: #1e3c72;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+}
+
+.btn-secundario:hover {
+    -fx-background-color: #d5dce6;
+}
+
+.btn-danger {
+    -fx-background-color: #fdecea;
+    -fx-text-fill: #c0392b;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+}
+
+.btn-danger:hover {
+    -fx-background-color: #f8d3ce;
+}
+
+.mensaje-error {
+    -fx-text-fill: #c0392b;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.mensaje-info {
+    -fx-text-fill: #1e7a3d;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.subtitulo {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e3c72;
+}
+
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #e3e8ee;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #1e3c72;
+}
+
+.table-view .column-header-background .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.chip-dia {
+    -fx-background-color: #e3e8ee;
+    -fx-background-radius: 4px;
+    -fx-padding: 2px 8px;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e3c72;
+}
