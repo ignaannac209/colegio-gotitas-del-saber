@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="main.java.edu.ingsoft.colegio.gotitas.controller.AdminHorarioDocenteController"
+      spacing="12" styleClass="admin-root"
+      stylesheets="@/main/resources/css/admin-view.css">
+
+    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="form-panel">
+        <Label text="Selecciona un profesor:" styleClass="field-label" />
+        <ComboBox fx:id="comboDocente" prefWidth="320" promptText="Profesor" />
+    </HBox>
+
+    <Label fx:id="lblTituloHorario" styleClass="subtitulo" />
+
+    <TableView fx:id="tablaHorario" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colDia" text="Día" prefWidth="140" />
+            <TableColumn fx:id="colHora" text="Hora" prefWidth="180" />
+            <TableColumn fx:id="colMateria" text="Materia" prefWidth="200" />
+            <TableColumn fx:id="colSeccion" text="Sección" prefWidth="160" />
+        </columns>
+    </TableView>
+
+    <padding><Insets top="4" right="4" bottom="4" left="4" /></padding>
+</VBox>
