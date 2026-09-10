@@ -61,6 +61,9 @@ public class MainMenuController implements Initializable {
         paneContenido.getChildren().clear();
         sceneManager.showLoginView();
     }
+    private void handleDashBoardEstudiante(ActionEvent event) {
+        mostrarSeccion("Perfil", "Aquí se mostrará la información del perfil del usuario.");
+    }
 
     /** Actualiza el área central con un contenido de ejemplo por sección. */
     private void mostrarSeccion(String titulo, String contenido) {

@@ -73,6 +73,12 @@ public class SceneManager {
 
         renderScene(loader, "Colegio Gotitas del Saber - Menú Principal", 900, 600);
     }
+     
+    /**
+     * Muestra la Vista d: Vista estudiante (Dashboard)*
+     
+     */
+      
 
    
     private void renderScene(FXMLLoader loader, String title, double width, double height) throws IOException {
