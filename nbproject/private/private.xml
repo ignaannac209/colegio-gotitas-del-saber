@@ -2,6 +2,10 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/JOSE%20BATEN/Desktop/colegio-gotitas-del-saber-main/src/main/resources/view/dashboard-profesores-view.fxml</file>
+            <file>file:/C:/Users/JOSE%20BATEN/Desktop/colegio-gotitas-del-saber-main/src/main/resources/css/dashboard-profesores-view.css</file>
+            <file>file:/C:/Users/JOSE%20BATEN/Desktop/colegio-gotitas-del-saber-main/src/main/java/edu/ingsoft/colegio/gotitas/controller/DashboardProfesoresController.java</file>
+        </group>
     </open-files>
 </project-private>

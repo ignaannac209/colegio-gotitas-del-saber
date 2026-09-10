@@ -1,0 +1,28 @@
+/* Estilos generales para el Dashboard de Profesores */
+
+.root {
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+/* Estilo del menú lateral (Sidebar) */
+.sidebar {
+    -fx-background-color: #2c3e50;
+}
+
+/* Estilos de los botones del menú lateral */
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 0 0 0 20px;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+}
+
+.menu-button:hover {
+    -fx-background-color: #34495e;
+}
+
+.menu-button:pressed {
+    -fx-background-color: #1abc9c;
+}
