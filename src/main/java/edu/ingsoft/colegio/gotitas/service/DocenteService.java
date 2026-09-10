@@ -2,7 +2,7 @@ package main.java.edu.ingsoft.colegio.gotitas.service;
 
 import java.sql.SQLException;
 import java.util.List;
-import main.java.edu.ingsoft.colegio.gotitas.model.Docente;
+import main.java.edu.ingsoft.colegio.gotitas.model.docente.Docente;
 import main.java.edu.ingsoft.colegio.gotitas.repository.DocenteRepository;
 
 /** Lógica de negocio para la administración de docentes (crear, editar, eliminar). */

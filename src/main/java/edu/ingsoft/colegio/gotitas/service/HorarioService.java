@@ -2,7 +2,7 @@ package main.java.edu.ingsoft.colegio.gotitas.service;
 
 import java.sql.SQLException;
 import java.util.List;
-import main.java.edu.ingsoft.colegio.gotitas.model.Alumno;
+import main.java.edu.ingsoft.colegio.gotitas.model.estudiante.Alumno;
 import main.java.edu.ingsoft.colegio.gotitas.model.Horario;
 import main.java.edu.ingsoft.colegio.gotitas.repository.AlumnoRepository;
 import main.java.edu.ingsoft.colegio.gotitas.repository.HorarioRepository;

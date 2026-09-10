@@ -1,4 +1,4 @@
-package main.java.edu.ingsoft.colegio.gotitas.model;
+package main.java.edu.ingsoft.colegio.gotitas.model.estudiante;
 
 /**
  * POJO que representa a un alumno inscrito en una sección.

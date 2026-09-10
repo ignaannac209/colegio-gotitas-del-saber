@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import main.java.edu.ingsoft.colegio.gotitas.config.DataBaseConnection;
-import main.java.edu.ingsoft.colegio.gotitas.model.Docente;
+import main.java.edu.ingsoft.colegio.gotitas.model.docente.Docente;
 
 /** Acceso a datos de docentes, incluyendo su cuenta de acceso (tabla usuarios). */
 public class DocenteRepository {
