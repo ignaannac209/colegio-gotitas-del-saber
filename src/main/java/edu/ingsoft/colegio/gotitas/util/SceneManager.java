@@ -1,10 +1,13 @@
 package main.java.edu.ingsoft.colegio.gotitas.util;
 
 import java.io.IOException;
+import java.net.URL;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import main.java.edu.ingsoft.colegio.gotitas.MainApp;
 
 import main.java.edu.ingsoft.colegio.gotitas.controller.LoginController;
 import main.java.edu.ingsoft.colegio.gotitas.controller.MainMenuController;
@@ -15,14 +18,17 @@ import main.java.edu.ingsoft.colegio.gotitas.service.AuthService;
 
 public class SceneManager {
 
-    private static final String VIEW_LOGIN =
-            "/main/resources/view/login-view.fxml";
+    private static final String VIEW_LOGIN
+            = "/main/resources/view/login-view.fxml";
 
-    private static final String VIEW_REGISTRO =
-            "/main/resources/view/registro-view.fxml";
+    private static final String VIEW_REGISTRO
+            = "/main/resources/view/registro-view.fxml";
 
-    private static final String VIEW_MAIN_MENU =
-            "/main/resources/view/main-menu-view.fxml";
+    private static final String VIEW_MAIN_MENU
+            = "/main/resources/view/main-menu-view.fxml";
+
+    private static final String DASHBOARD_ESTUDIANTE_VIEW
+            = "/main/resources/view/estudiante-dashboard-view.fxml";
 
     private final Stage primaryStage;
     private final AuthService authService;
@@ -35,16 +41,12 @@ public class SceneManager {
     }
 
     public void showLoginView() throws IOException {
-        FXMLLoader loader =
-                new FXMLLoader(getClass().getResource(VIEW_LOGIN));
-
-        loader.setControllerFactory(clazz -> {
-            if (clazz == LoginController.class) {
-                return new LoginController(authService, this);
-            }
-
-            return instantiate(clazz);
-        });
+        FXMLLoader loader
+                = new FXMLLoader();
+        URL url = MainApp.class.getResource(VIEW_LOGIN);
+        loader.setLocation(url);
+        LoginController.setAuthService(authService);
+        LoginController.setSceneManager(this);
 
         renderScene(
                 loader,
@@ -55,16 +57,10 @@ public class SceneManager {
     }
 
     public void showRegistroView() throws IOException {
-        FXMLLoader loader =
-                new FXMLLoader(getClass().getResource(VIEW_REGISTRO));
+        FXMLLoader loader
+                = new FXMLLoader(getClass().getResource(VIEW_REGISTRO));
 
-        loader.setControllerFactory(clazz -> {
-            if (clazz == RegistroController.class) {
-                return new RegistroController(authService, this);
-            }
-
-            return instantiate(clazz);
-        });
+        loader.setController(new RegistroController(authService, this));
 
         renderScene(
                 loader,
@@ -77,19 +73,12 @@ public class SceneManager {
     public void showMainMenuView(Auth usuarioAutenticado)
             throws IOException {
 
-        FXMLLoader loader =
-                new FXMLLoader(getClass().getResource(VIEW_MAIN_MENU));
-
-        loader.setControllerFactory(clazz -> {
-            if (clazz == MainMenuController.class) {
-                return new MainMenuController(
-                        this,
-                        usuarioAutenticado
-                );
-            }
-
-            return instantiate(clazz);
-        });
+        FXMLLoader loader
+                = new FXMLLoader();
+        URL url = MainApp.class.getResource(VIEW_MAIN_MENU);
+        loader.setLocation(url);        
+        MainMenuController.setSceneManager(this);
+        MainMenuController.setUsuarioAutenticado(usuarioAutenticado);
 
         renderScene(
                 loader,
@@ -99,6 +88,25 @@ public class SceneManager {
         );
     }
 
+    //Aljendro Marroqin realizo metodo del  Dashboard 
+    public void showDashBoardEstudiante(Auth usuarioAutenticado)
+            throws IOException {
+
+        FXMLLoader loader
+                = new FXMLLoader(getClass().getResource(DASHBOARD_ESTUDIANTE_VIEW));
+
+        
+
+        renderScene(
+                loader,
+                "Colegio Gotitas del Saber - Menu principal",
+                900,
+                600
+        );
+
+    }
+
+
     private void renderScene(
             FXMLLoader loader,
             String title,
@@ -106,9 +114,8 @@ public class SceneManager {
             double height
     ) throws IOException {
 
-        Parent root = loader.load();
 
-        Scene scene = new Scene(root, width, height);
+        Scene scene = new Scene(loader.load(), width, height);
 
         primaryStage.setTitle(title);
         primaryStage.setScene(scene);
@@ -116,15 +123,4 @@ public class SceneManager {
         primaryStage.show();
     }
 
-    private Object instantiate(Class<?> clazz) {
-        try {
-            return clazz.getDeclaredConstructor().newInstance();
-        } catch (ReflectiveOperationException e) {
-            throw new IllegalStateException(
-                    "No se pudo crear el controlador "
-                    + clazz.getName(),
-                    e
-            );
-        }
-    }
 }

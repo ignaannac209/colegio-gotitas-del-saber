@@ -38,15 +38,15 @@ public class MainMenuController implements Initializable {
     private static final String VIEW_HORARIOS = "/main/resources/view/admin-horarios-view.fxml";
     private static final String VIEW_HORARIO_DOCENTE = "/main/resources/view/admin-horario-docente-view.fxml";
     private static final String VIEW_DOCENTES_ALUMNOS = "/main/resources/view/admin-docentes-alumnos-view.fxml";
-
-    private final SceneManager sceneManager;
-    private final Auth usuarioAutenticado;
+    private static final String  DASHBOARD_ESTUDIANTE_VIEW = "/main/resources/view/estudiante-dashboard-view.fxml";
+    private static SceneManager sceneManager;
+    private static Auth usuarioAutenticado;
 
     // Servicios del panel de administración, compartidos entre las sub-vistas.
-    private final AlumnoService alumnoService;
-    private final DocenteService docenteService;
-    private final CatalogoService catalogoService;
-    private final HorarioService horarioService;
+    private  AlumnoService alumnoService;
+    private  DocenteService docenteService;
+    private  CatalogoService catalogoService;
+    private  HorarioService horarioService;
 
     @FXML
     private Label lblUsuarioActivo;
@@ -57,6 +57,10 @@ public class MainMenuController implements Initializable {
     @FXML
     private StackPane paneContenido;
 
+    public MainMenuController(){
+        
+    }
+    
     public MainMenuController(SceneManager sceneManager, Auth usuarioAutenticado) {
         this.sceneManager = sceneManager;
         this.usuarioAutenticado = usuarioAutenticado;
@@ -68,6 +72,16 @@ public class MainMenuController implements Initializable {
         this.horarioService = new HorarioService(new HorarioRepository(), new AlumnoRepository());
     }
 
+    public static void setSceneManager(SceneManager sceneManager) {
+        MainMenuController.sceneManager = sceneManager;
+    }
+
+    public static void setUsuarioAutenticado(Auth usuarioAutenticado) {
+        MainMenuController.usuarioAutenticado = usuarioAutenticado;
+    }
+
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String nombre = usuarioAutenticado != null ? usuarioAutenticado.getNombreCompleto() : "Usuario";
@@ -145,6 +159,20 @@ public class MainMenuController implements Initializable {
         paneContenido.getChildren().clear();
         sceneManager.showLoginView();
     }
+    
+    
+    
+   @FXML
+private void handledDashBoardEstudianteView(ActionEvent event) {
+    cargarVistaAdmin(DASHBOARD_ESTUDIANTE_VIEW, "Horario Diario de Profesores", clazz -> {
+            if (clazz == AdminHorarioDocenteController.class) {
+                return new AdminHorarioDocenteController(horarioService, docenteService);
+            }
+            return null;
+           });
+    }
+    
+
 
     /** Actualiza el área central con un contenido de ejemplo por sección. */
     private void mostrarSeccion(String titulo, String contenido) {

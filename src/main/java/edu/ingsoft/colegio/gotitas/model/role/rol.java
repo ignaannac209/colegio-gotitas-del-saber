@@ -1,7 +1,7 @@
 
 package main.java.edu.ingsoft.colegio.gotitas.model.role;
 
-
+/*
 public class Rol {
 
     private String nombreRol;
@@ -18,3 +18,4 @@ public class Rol {
         this.nombreRol = nombreRol;
     } 
 }
+*/

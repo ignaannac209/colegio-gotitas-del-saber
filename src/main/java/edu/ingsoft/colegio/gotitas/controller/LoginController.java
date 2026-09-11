@@ -26,8 +26,14 @@ public class LoginController implements Initializable {
     private static final String USUARIO_PRUEBA = "admin";
     private static final String PASSWORD_PRUEBA = "123";
 
-    private final AuthService authService;
-    private final SceneManager sceneManager;
+    private static AuthService authService;
+    private static SceneManager sceneManager;
+
+     @FXML
+    private Label lblMensajeError;
+
+    @FXML
+    private Hyperlink linkCrearCuenta;
 
     @FXML
     private TextField txtFieldEmail;
@@ -35,12 +41,18 @@ public class LoginController implements Initializable {
     @FXML
     private PasswordField txtFieldPassword;
 
-    @FXML
-    private Label lblMensajeError;
+    public LoginController(){
+        
+    }
 
-    @FXML
-    private Hyperlink linkCrearCuenta;
+    public static void setAuthService(AuthService authService) {
+        LoginController.authService = authService;
+    }
 
+    public static void setSceneManager(SceneManager sceneManager) {
+        LoginController.sceneManager = sceneManager;
+    }
+    
     public LoginController(AuthService authService, SceneManager sceneManager) {
         this.authService = authService;
         this.sceneManager = sceneManager;
@@ -90,6 +102,7 @@ public class LoginController implements Initializable {
         LoginRequest loginRequest = new LoginRequest(email, password);
         LoginResponse response = authService.login(loginRequest);
         return new Auth(response.getNombre(), response.getApellido(), email);
+
     }
 
     private void mostrarError(String mensaje) {

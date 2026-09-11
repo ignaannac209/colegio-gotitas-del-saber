@@ -12,6 +12,8 @@
             fx:controller="main.java.edu.ingsoft.colegio.gotitas.controller.MainMenuController"
             styleClass="root-background"
             stylesheets="@/main/resources/css/main-menu-view.css">
+    
+ 
 
     <top>
         <HBox alignment="CENTER_LEFT" spacing="12" styleClass="encabezado">
@@ -40,6 +42,7 @@
             <Label text="CUENTA" styleClass="etiqueta-grupo-menu" />
             <Button text="👤  Perfil" onAction="#handlePerfil" styleClass="boton-menu" maxWidth="Infinity" />
             <Button text="⚙️  Configuración" onAction="#handleConfiguracion" styleClass="boton-menu" maxWidth="Infinity" />
+            <Button text =" 🎓 DashBoard Estudiante" onAction="#handledDashBoardEstudianteView" styleClass="boton menu" maxWidth="Infinity"/>
             <VBox VBox.vgrow="ALWAYS" />
             <Button text="🚪  Cerrar Sesión" onAction="#handleCerrarSesion" styleClass="boton-menu, boton-cerrar-sesion" maxWidth="Infinity" />
         </VBox>
