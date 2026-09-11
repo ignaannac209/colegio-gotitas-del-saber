@@ -7,7 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import main.java.edu.ingsoft.colegio.gotitas.config.DataBaseConnection;
-import main.java.edu.ingsoft.colegio.gotitas.model.Curso;
+import main.java.edu.ingsoft.colegio.gotitas.model.cursos.Curso;
 
 /** Acceso a datos de la tabla cursos. */
 public class CursoRepository {

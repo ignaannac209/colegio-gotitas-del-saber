@@ -18,7 +18,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import main.java.edu.ingsoft.colegio.gotitas.model.estudiante.Alumno;
 import main.java.edu.ingsoft.colegio.gotitas.model.docente.Docente;
-import main.java.edu.ingsoft.colegio.gotitas.model.Seccion;
+import main.java.edu.ingsoft.colegio.gotitas.model.cursos.Seccion;
 import main.java.edu.ingsoft.colegio.gotitas.service.AlumnoService;
 import main.java.edu.ingsoft.colegio.gotitas.service.CatalogoService;
 import main.java.edu.ingsoft.colegio.gotitas.service.DocenteService;

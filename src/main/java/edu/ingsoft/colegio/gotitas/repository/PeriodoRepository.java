@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import main.java.edu.ingsoft.colegio.gotitas.config.DataBaseConnection;
-import main.java.edu.ingsoft.colegio.gotitas.model.Periodo;
+import main.java.edu.ingsoft.colegio.gotitas.model.cursos.Periodo;
 
 /** Acceso a datos de la tabla periodos (bloques fijos 7:05am - 12:05pm). */
 public class PeriodoRepository {

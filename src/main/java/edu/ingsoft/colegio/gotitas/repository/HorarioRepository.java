@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import main.java.edu.ingsoft.colegio.gotitas.config.DataBaseConnection;
-import main.java.edu.ingsoft.colegio.gotitas.model.Horario;
+import main.java.edu.ingsoft.colegio.gotitas.model.cursos.Horario;
 
 /**
  * Acceso a datos de la tabla horarios: asigna, por sección/día/periodo,

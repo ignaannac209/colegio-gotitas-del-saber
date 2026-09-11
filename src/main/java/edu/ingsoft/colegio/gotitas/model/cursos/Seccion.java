@@ -1,4 +1,4 @@
-package main.java.edu.ingsoft.colegio.gotitas.model;
+package main.java.edu.ingsoft.colegio.gotitas.model.cursos;
 
 /** POJO que representa una sección de un curso (ej. "A" de "Primero Primaria"). */
 public class Seccion {

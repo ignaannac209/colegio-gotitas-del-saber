@@ -2,10 +2,10 @@ package main.java.edu.ingsoft.colegio.gotitas.service;
 
 import java.sql.SQLException;
 import java.util.List;
-import main.java.edu.ingsoft.colegio.gotitas.model.Curso;
-import main.java.edu.ingsoft.colegio.gotitas.model.Materia;
-import main.java.edu.ingsoft.colegio.gotitas.model.Periodo;
-import main.java.edu.ingsoft.colegio.gotitas.model.Seccion;
+import main.java.edu.ingsoft.colegio.gotitas.model.cursos.Curso;
+import main.java.edu.ingsoft.colegio.gotitas.model.cursos.Materia;
+import main.java.edu.ingsoft.colegio.gotitas.model.cursos.Periodo;
+import main.java.edu.ingsoft.colegio.gotitas.model.cursos.Seccion;
 import main.java.edu.ingsoft.colegio.gotitas.repository.CursoRepository;
 import main.java.edu.ingsoft.colegio.gotitas.repository.MateriaRepository;
 import main.java.edu.ingsoft.colegio.gotitas.repository.PeriodoRepository;

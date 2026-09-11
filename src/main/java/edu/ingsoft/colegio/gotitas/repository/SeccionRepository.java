@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import main.java.edu.ingsoft.colegio.gotitas.config.DataBaseConnection;
-import main.java.edu.ingsoft.colegio.gotitas.model.Seccion;
+import main.java.edu.ingsoft.colegio.gotitas.model.cursos.Seccion;
 
 /** Acceso a datos de la tabla secciones. */
 public class SeccionRepository {

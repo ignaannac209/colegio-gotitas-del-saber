@@ -1,4 +1,4 @@
-package main.java.edu.ingsoft.colegio.gotitas.model;
+package main.java.edu.ingsoft.colegio.gotitas.model.cursos;
 
 /** POJO que representa una materia/asignatura (ej. "Matemática"). */
 public class Materia {

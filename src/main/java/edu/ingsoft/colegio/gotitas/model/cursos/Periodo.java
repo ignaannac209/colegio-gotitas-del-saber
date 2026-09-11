@@ -1,4 +1,4 @@
-package main.java.edu.ingsoft.colegio.gotitas.model;
+package main.java.edu.ingsoft.colegio.gotitas.model.cursos;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;

@@ -14,9 +14,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import main.java.edu.ingsoft.colegio.gotitas.model.Curso;
-import main.java.edu.ingsoft.colegio.gotitas.model.Materia;
-import main.java.edu.ingsoft.colegio.gotitas.model.Seccion;
+import main.java.edu.ingsoft.colegio.gotitas.model.cursos.Curso;
+import main.java.edu.ingsoft.colegio.gotitas.model.cursos.Materia;
+import main.java.edu.ingsoft.colegio.gotitas.model.cursos.Seccion;
 import main.java.edu.ingsoft.colegio.gotitas.service.CatalogoService;
 
 /**

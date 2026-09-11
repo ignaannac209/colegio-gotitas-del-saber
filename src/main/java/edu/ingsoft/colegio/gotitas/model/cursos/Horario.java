@@ -1,4 +1,4 @@
-package main.java.edu.ingsoft.colegio.gotitas.model;
+package main.java.edu.ingsoft.colegio.gotitas.model.cursos;
 
 /**
  * POJO que representa una asignación de horario: en una sección, un día y

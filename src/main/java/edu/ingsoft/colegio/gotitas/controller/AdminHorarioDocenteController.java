@@ -12,7 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import main.java.edu.ingsoft.colegio.gotitas.model.docente.Docente;
-import main.java.edu.ingsoft.colegio.gotitas.model.Horario;
+import main.java.edu.ingsoft.colegio.gotitas.model.cursos.Horario;
 import main.java.edu.ingsoft.colegio.gotitas.service.DocenteService;
 import main.java.edu.ingsoft.colegio.gotitas.service.HorarioService;
 
