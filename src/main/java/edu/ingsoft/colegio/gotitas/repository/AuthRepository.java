@@ -36,7 +36,8 @@ public class AuthRepository {
     public LoginResponse findUserByEmail(LoginRequest loginRequest) throws SQLException {
         String sql = "SELECT COALESCE(d.nombre, e.nombre) AS nombre, "
                 + "COALESCE(d.apellido, e.apellido) AS apellido, "
-                + "u.contrasena_hash "
+                + "u.contrasena_hash, "
+                + "u.id_rol "
                 + "FROM usuarios AS u "
                 + "LEFT JOIN docentes AS d ON d.id_docente = u.id_docente "
                 + "LEFT JOIN estudiantes AS e ON e.id_estudiante = u.id_estudiante "
@@ -50,13 +51,23 @@ public class AuthRepository {
                     return new LoginResponse(
                             rs.getString("nombre"),
                             rs.getString("apellido"),
-                            rs.getString("contrasena_hash")
+                            rs.getString("contrasena_hash"),
+                            rs.getInt("id_rol")
                     );
                 }
             }
         }
 
         return null;
+    }
+
+    /** Expuesto para que otras capas (ej. LoginController) puedan mapear id_rol -> nombre de rol. */
+    public static int idRolDocente() {
+        return ID_ROL_DOCENTE;
+    }
+
+    public static int idRolEstudiante() {
+        return ID_ROL_ESTUDIANTE;
     }
 
     /**

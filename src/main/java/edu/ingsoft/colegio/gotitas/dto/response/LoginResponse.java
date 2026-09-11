@@ -9,11 +9,21 @@ public class LoginResponse {
     private String nombre;
     private String apellido;
     private String contrasenaHash;
+    private int idRol;
 
-    public LoginResponse(String nombre, String apellido, String contrasenaHash) {
+    public LoginResponse(String nombre, String apellido, String contrasenaHash, int idRol) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.contrasenaHash = contrasenaHash;
+        this.idRol = idRol;
+    }
+
+    public int getIdRol() {
+        return idRol;
+    }
+
+    public void setIdRol(int idRol) {
+        this.idRol = idRol;
     }
 
     public String getNombre() {

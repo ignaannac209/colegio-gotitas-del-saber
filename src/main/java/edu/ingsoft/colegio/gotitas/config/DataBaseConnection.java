@@ -3,7 +3,6 @@ package main.java.edu.ingsoft.colegio.gotitas.config;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
 /**
  * Administra una única conexión JDBC reutilizable hacia la base de datos.
  */

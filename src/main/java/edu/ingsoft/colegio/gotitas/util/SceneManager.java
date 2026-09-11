@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import main.java.edu.ingsoft.colegio.gotitas.controller.DashboardController;
 import main.java.edu.ingsoft.colegio.gotitas.controller.LoginController;
 import main.java.edu.ingsoft.colegio.gotitas.controller.MainMenuController;
 import main.java.edu.ingsoft.colegio.gotitas.controller.RegistroController;
@@ -23,6 +24,9 @@ public class SceneManager {
 
     private static final String VIEW_MAIN_MENU =
             "/main/resources/view/main-menu-view.fxml";
+
+    private static final String VIEW_DASHBOARD_DOCENTES =
+            "/main/resources/view/dashboard-view-docentes.fxml";
 
     private final Stage primaryStage;
     private final AuthService authService;
@@ -94,6 +98,32 @@ public class SceneManager {
         renderScene(
                 loader,
                 "Colegio Gotitas del Saber - Menú Principal",
+                900,
+                600
+        );
+    }
+
+    /**
+     * Carga el dashboard exclusivo para el rol Docente.
+     * Antes de este método, no existía ninguna ruta hacia
+     * dashboard-view-docentes.fxml, por eso un docente terminaba siempre
+     * viendo el Menú Principal de administrador.
+     */
+    public void showDashboardDocenteView(Auth usuarioAutenticado) throws IOException {
+        FXMLLoader loader =
+                new FXMLLoader(getClass().getResource(VIEW_DASHBOARD_DOCENTES));
+
+        loader.setControllerFactory(clazz -> {
+            if (clazz == DashboardController.class) {
+                return new DashboardController(this, usuarioAutenticado);
+            }
+
+            return instantiate(clazz);
+        });
+
+        renderScene(
+                loader,
+                "Colegio Gotitas del Saber - Panel Docente",
                 900,
                 600
         );

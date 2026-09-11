@@ -7,17 +7,48 @@ package main.java.edu.ingsoft.colegio.gotitas.model.auth;
  */
 public class Auth {
 
+    public static final String ROL_ADMINISTRADOR = "ADMINISTRADOR";
+    public static final String ROL_DOCENTE = "DOCENTE";
+    public static final String ROL_ESTUDIANTE = "ESTUDIANTE";
+
     private String nombre;
     private String apellido;
     private String email;
+    private String rol;
 
     public Auth() {
     }
 
+    /** Constructor de compatibilidad: mantiene el comportamiento previo (sin rol explícito). */
     public Auth(String nombre, String apellido, String email) {
+        this(nombre, apellido, email, ROL_ADMINISTRADOR);
+    }
+
+    public Auth(String nombre, String apellido, String email, String rol) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
+        this.rol = rol;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
+
+    public boolean esAdministrador() {
+        return ROL_ADMINISTRADOR.equals(rol);
+    }
+
+    public boolean esDocente() {
+        return ROL_DOCENTE.equals(rol);
+    }
+
+    public boolean esEstudiante() {
+        return ROL_ESTUDIANTE.equals(rol);
     }
 
     public String getNombre() {

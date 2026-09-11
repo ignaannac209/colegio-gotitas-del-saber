@@ -13,16 +13,12 @@ import javafx.scene.control.TextField;
 import main.java.edu.ingsoft.colegio.gotitas.dto.request.LoginRequest;
 import main.java.edu.ingsoft.colegio.gotitas.dto.response.LoginResponse;
 import main.java.edu.ingsoft.colegio.gotitas.model.auth.Auth;
+import main.java.edu.ingsoft.colegio.gotitas.repository.AuthRepository;
 import main.java.edu.ingsoft.colegio.gotitas.service.AuthService;
 import main.java.edu.ingsoft.colegio.gotitas.util.SceneManager;
 
-/**
- * Controlador de la Vista  (Login). Valida las credenciales ingresadas y
- * navega hacia el Menú Principal o hacia la vista de Registro.
- */
 public class LoginController implements Initializable {
 
-    /** Credenciales de prueba solicitadas por la guía (ej: admin/123). */
     private static final String USUARIO_PRUEBA = "admin";
     private static final String PASSWORD_PRUEBA = "123";
 
@@ -64,7 +60,7 @@ public class LoginController implements Initializable {
         try {
             Auth usuarioAutenticado = autenticar(email, password);
             lblMensajeError.setText("");
-            sceneManager.showMainMenuView(usuarioAutenticado);
+            redirigirSegunRol(usuarioAutenticado);
         } catch (NullPointerException e) {
             e.printStackTrace();
             mostrarError("No fue posible iniciar sesión.es ");
@@ -79,17 +75,36 @@ public class LoginController implements Initializable {
         sceneManager.showRegistroView();
     }
 
-    /**
-     * Autentica al usuario.
-     */
     private Auth autenticar(String email, String password) throws Exception {
         if (USUARIO_PRUEBA.equalsIgnoreCase(email) && PASSWORD_PRUEBA.equals(password)) {
-            return new Auth("Administrador", "General", email);
+            return new Auth("Administrador", "General", email, Auth.ROL_ADMINISTRADOR);
         }
 
         LoginRequest loginRequest = new LoginRequest(email, password);
         LoginResponse response = authService.login(loginRequest);
-        return new Auth(response.getNombre(), response.getApellido(), email);
+        String rol = mapearRol(response.getIdRol());
+        return new Auth(response.getNombre(), response.getApellido(), email, rol);
+    }
+
+    private String mapearRol(int idRol) {
+        if (idRol == AuthRepository.idRolDocente()) {
+            return Auth.ROL_DOCENTE;
+        }
+        if (idRol == AuthRepository.idRolEstudiante()) {
+            return Auth.ROL_ESTUDIANTE;
+        }
+        return Auth.ROL_ADMINISTRADOR;
+    }
+
+
+    private void redirigirSegunRol(Auth usuarioAutenticado) throws Exception {
+        if (usuarioAutenticado.esDocente()) {
+            sceneManager.showDashboardDocenteView(usuarioAutenticado);
+        } else {
+            // Administrador (y, por ahora, cualquier otro rol no contemplado
+            // explícitamente cae aquí también, para no romper el flujo actual).
+            sceneManager.showMainMenuView(usuarioAutenticado);
+        }
     }
 
     private void mostrarError(String mensaje) {
