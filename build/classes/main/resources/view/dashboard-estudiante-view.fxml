@@ -4,12 +4,19 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<<<<<<< HEAD
 <?import javafx.scene.control.TextField?>
+=======
+>>>>>>> main
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
+<<<<<<< HEAD
 <AnchorPane fx:id="root" prefHeight="760.0" prefWidth="1200.0" stylesheets="@InformacionEstudiante.css" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1">
+=======
+<AnchorPane fx:id="root" prefHeight="760.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1">
+>>>>>>> main
 
     <children>
         <VBox spacing="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -68,13 +75,19 @@
                                             <HBox spacing="15.0">
                                                 <children>
                                                     <Label styleClass="field-label" text="👤  Nombre:" />
+<<<<<<< HEAD
                                                     <TextField fx:id="txtNombre" editable="false" promptText="Nombre del estudiante" styleClass="data-field" HBox.hgrow="ALWAYS" />
+=======
+>>>>>>> main
                                                 </children>
                                             </HBox>
                                             <HBox spacing="15.0">
                                                 <children>
                                                     <Label styleClass="field-label" text="🎓  Grado:" />
+<<<<<<< HEAD
                                                     <TextField fx:id="txtGrado" editable="false" promptText="Grado" styleClass="data-field" HBox.hgrow="ALWAYS" />
+=======
+>>>>>>> main
                                                 </children>
                                             </HBox>
                                         </children>
@@ -85,13 +98,19 @@
                                             <HBox spacing="15.0">
                                                 <children>
                                                     <Label styleClass="field-label" text="👥  Sección:" />
+<<<<<<< HEAD
                                                     <TextField fx:id="txtSeccion" editable="false" promptText="Sección" styleClass="data-field" HBox.hgrow="ALWAYS" />
+=======
+>>>>>>> main
                                                 </children>
                                             </HBox>
                                             <HBox spacing="15.0">
                                                 <children>
                                                     <Label styleClass="field-label" text="▣  Carnet:" />
+<<<<<<< HEAD
                                                     <TextField fx:id="txtCarnet" editable="false" promptText="Carnet" styleClass="data-field" HBox.hgrow="ALWAYS" />
+=======
+>>>>>>> main
                                                 </children>
                                             </HBox>
                                         </children>
@@ -106,7 +125,10 @@
                                         <children>
                                             <Label styleClass="section-icon" text="▣" />
                                             <Label styleClass="section-title" text="Mis Cursos y Profesores" HBox.hgrow="ALWAYS" />
+<<<<<<< HEAD
                                             <TextField fx:id="txtBuscar" prefWidth="250.0" promptText="🔍  Buscar curso..." styleClass="search-field" />
+=======
+>>>>>>> main
                                         </children>
                                     </HBox>
 

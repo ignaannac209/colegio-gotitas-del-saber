@@ -1,6 +1,7 @@
 package main.java.edu.ingsoft.colegio.gotitas;
 
 import javafx.application.Application;
+import static javafx.application.Application.launch;
 import javafx.stage.Stage;
 import main.java.edu.ingsoft.colegio.gotitas.config.DataBaseConnection;
 import main.java.edu.ingsoft.colegio.gotitas.util.SceneManager;

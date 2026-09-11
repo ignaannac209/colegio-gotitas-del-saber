@@ -58,14 +58,22 @@ public class AuthService {
                 || registroRequest.getPassword() == null || registroRequest.getPassword().isBlank()) {
             throw new IllegalArgumentException("Todos los campos son obligatorios");
         }
+        if (registroRequest.esEstudiante()
+                && (registroRequest.getCarne() == null || registroRequest.getCarne().isBlank())) {
+            throw new IllegalArgumentException("El carné de estudiante es obligatorio");
+        }
 
         String contrasenaHash = BCrypt.hashpw(registroRequest.getPassword(), BCrypt.gensalt());
 
         try {
             authRepository.registrarUsuario(registroRequest, contrasenaHash);
         } catch (SQLException e) {
-            if (e.getMessage() != null && e.getMessage().toLowerCase().contains("duplicate")) {
+            String mensaje = e.getMessage() != null ? e.getMessage().toLowerCase() : "";
+            if (mensaje.contains("duplicate")) {
                 throw new IllegalStateException("Ya existe una cuenta registrada con ese correo.");
+            }
+            if (mensaje.contains("chk_email_dominio_por_rol")) {
+                throw new IllegalStateException("Los docentes deben registrarse con un correo @hotmail.com.");
             }
             throw e;
         }

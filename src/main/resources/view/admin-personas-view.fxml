@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="main.java.edu.ingsoft.colegio.gotitas.controller.AdminPersonasController"
+      spacing="12" styleClass="admin-root"
+      stylesheets="@/main/resources/css/admin-view.css">
+
+    <TabPane tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+
+        <!-- ============================= DOCENTES ============================= -->
+        <Tab text="👨‍🏫 Docentes">
+            <VBox spacing="12">
+                <padding><Insets top="12" right="4" bottom="4" left="4" /></padding>
+
+                <VBox spacing="10" styleClass="form-panel">
+                    <Label text="Agregar / editar docente" styleClass="form-title" />
+                    <HBox spacing="12">
+                        <VBox spacing="4" HBox.hgrow="ALWAYS">
+                            <Label text="Nombre" styleClass="field-label" />
+                            <TextField fx:id="txtDocenteNombre" promptText="Nombre" />
+                        </VBox>
+                        <VBox spacing="4" HBox.hgrow="ALWAYS">
+                            <Label text="Apellido" styleClass="field-label" />
+                            <TextField fx:id="txtDocenteApellido" promptText="Apellido" />
+                        </VBox>
+                        <VBox spacing="4" HBox.hgrow="ALWAYS">
+                            <Label text="Correo (cuenta de acceso)" styleClass="field-label" />
+                            <TextField fx:id="txtDocenteEmail" promptText="Se crea desde 'Crear cuenta' en Login" disable="true" />
+                        </VBox>
+                    </HBox>
+                    <HBox spacing="8" alignment="CENTER_LEFT">
+                        <Button text="Guardar" styleClass="btn-primary" onAction="#handleGuardarDocente" />
+                        <Button text="Nuevo / Limpiar" styleClass="btn-secundario" onAction="#handleNuevoDocente" />
+                        <Button text="Eliminar seleccionado" styleClass="btn-danger" onAction="#handleEliminarDocente" />
+                        <Label fx:id="lblMensajeDocente" />
+                    </HBox>
+                </VBox>
+
+                <TableView fx:id="tablaDocentes" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colDocenteNombre" text="Nombre" prefWidth="160" />
+                        <TableColumn fx:id="colDocenteApellido" text="Apellido" prefWidth="160" />
+                        <TableColumn fx:id="colDocenteEmail" text="Correo" prefWidth="260" />
+                    </columns>
+                </TableView>
+            </VBox>
+        </Tab>
+
+        <!-- ============================= ALUMNOS ============================= -->
+        <Tab text="🧒 Alumnos">
+            <VBox spacing="12">
+                <padding><Insets top="12" right="4" bottom="4" left="4" /></padding>
+
+                <VBox spacing="10" styleClass="form-panel">
+                    <Label text="Agregar / editar alumno" styleClass="form-title" />
+                    <HBox spacing="12">
+                        <VBox spacing="4" HBox.hgrow="ALWAYS">
+                            <Label text="Nombre" styleClass="field-label" />
+                            <TextField fx:id="txtAlumnoNombre" promptText="Nombre" />
+                        </VBox>
+                        <VBox spacing="4" HBox.hgrow="ALWAYS">
+                            <Label text="Apellido" styleClass="field-label" />
+                            <TextField fx:id="txtAlumnoApellido" promptText="Apellido" />
+                        </VBox>
+                        <VBox spacing="4" HBox.hgrow="ALWAYS">
+                            <Label text="Curso y sección" styleClass="field-label" />
+                            <ComboBox fx:id="comboAlumnoSeccion" maxWidth="Infinity" promptText="Selecciona una sección" />
+                        </VBox>
+                    </HBox>
+                    <HBox spacing="8" alignment="CENTER_LEFT">
+                        <Button text="Guardar" styleClass="btn-primary" onAction="#handleGuardarAlumno" />
+                        <Button text="Nuevo / Limpiar" styleClass="btn-secundario" onAction="#handleNuevoAlumno" />
+                        <Button text="Eliminar seleccionado" styleClass="btn-danger" onAction="#handleEliminarAlumno" />
+                        <Label fx:id="lblMensajeAlumno" />
+                    </HBox>
+                </VBox>
+
+                <TableView fx:id="tablaAlumnos" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colAlumnoNombre" text="Nombre" prefWidth="160" />
+                        <TableColumn fx:id="colAlumnoApellido" text="Apellido" prefWidth="160" />
+                        <TableColumn fx:id="colAlumnoSeccion" text="Curso / Sección" prefWidth="220" />
+                    </columns>
+                </TableView>
+            </VBox>
+        </Tab>
+    </TabPane>
+</VBox>
